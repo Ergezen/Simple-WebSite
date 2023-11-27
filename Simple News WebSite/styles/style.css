@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap'); /*yazı fontu için*/
+
+:root {
+    --main-color: #e3ecec;/*arka plan rengi*/
+    --black-color: #0e0e0e;
+    --border: 0.1rem solid rgba(255, 255, 255, 0.4);
+}
+
+
+*{ /* Menü için*/
+    font-family: "Poppins", sans-serif;/*yazı fontu için*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize; /*Yazıların baş harflerini büyük gerisini küçük yazmak için*/
+    transition: 0.2s ease; /*gearch geçiş yavaşlatmak için*/
+}
+
+/*! base html codes*/
+html {
+    font-size: 62.5%; /* Normalde 1 rem 16 px bunu yazdığımızda 1 rem 10 px oluyor. */
+    overflow-x: hidden; /* Sayfayı büyütünce falan alttaki sağa-sola kaydırma çubuğu çıkmaması için*/
+    scroll-padding-top: 9rem; /* Scroll için */
+    scroll-behavior: smooth;
+}
+
+
+html::-webkit-scrollbar { /* Sağdaki scroll düzenleme */
+    width: 0.8rem;
+    background-color: white;
+}
+
+html::-webkit-scrollbar-thumb { /* Sağdaki scroll düzenleme */
+    border-radius: 3rem;
+    background-color: var(--black-color);
+}
+
+
+body {
+    background-color: #fff; /* Arka plan rengini siteye vermek için */
+    height: 100vh;
+}
+    
+    .logo  img{ /* logo boyutu için */
+        height: 8rem;
+    }
+
+    section {  /* Home yazısı ve altındaki yazılar için konum ayarlama */
+        padding: 3.5rem 7%;
+    }
+
+    .btn { /* Hemen oku buttonu için */
+        margin-top: 1rem;
+        display: inline-block;
+        padding: 2rem 3.75rem;
+        border-radius: 30rem;
+        font-size: 1.7rem;
+        color: #fff;
+        background-color: var(--black-color);
+        /* tıklanabilmesi için cursor: pointer; yazabiliriz ama a etiketi olduğu için zaten tıklanıyor onun için gerek yok */
+    }
+
+    .btn:hover { /* butonun üstüne fareyi götürünce saydam olması için */
+        opacity: 0.6; /* saydamlık */
+    }
+
+    .heading {  /* Science başlığı ayarlama */
+        color: var(--black-color);
+        font-size: 3rem;
+        padding: 1rem;
+        text-transform: uppercase;
+        margin-bottom: 3.5rem;
+        border-bottom: 0.1rem solid #0e0e0e;
+        
+    }
+
+
+    /* Başlık başlangıç */
+    .header .logo img{
+        height: 10rem;
+    }
+
+    .header {
+        background-color: white; /* Arka plan rengi */
+        display: flex; /* Yanyana attık */
+        align-items: center; /* Dikeyde hizaladık */
+        justify-content: space-between; /* Logoyu sola yazıları ortaya armayı sağa ortaladık */
+        padding: 0 7%; /* sağdan soldan boşluk vermek için */
+        margin: 2rem 7%; /* Menü kısmını yukarıdan ayırdı */
+        border-radius: 30rem; /* köşeleri ovalleştirmek için */
+        box-shadow: 0px 0px 17px -2px rgba(0, 0, 0, 0.75); /* Menü kısmına gölge vermek için */
+        position: sticky; /* Position ve top 0 ile menü aşağı kaydırdığında beraber gelmesi için */
+        top: 0;
+        z-index: 1000; /* Menü önde olsun üstüne birşey gelmesin kapatmasın diye */ 
+    }
+
+    .header .navbar a { /* Menü Başlık kısmının yazıları için */
+        margin: 0 1rem; /* sağdan ve soldan uzaklaşsın */
+        font-size: 1.6rem; /* Boyut için */
+        color: var(--black-color);
+        border-bottom: 0.1rem solid transparent; /* Menü kısmındaki yazıların altını fare götürünce renkli çizmek için */
+    }
+
+    .header .navbar .active, /* yanına virgül koyunca ikisinede bu kodları yaz demek oluyor */
+    .header .navbar a:hover {
+        color: red; /* navbarın üstündeki yazıların üstüne gidince kırmızı olması için */
+        border-color: red; /* Navbarrın yazılarının altını kırmızı çizgiyi vermek için */
+        padding-bottom: 0.5rem; /* Yazılarla çizginin arasına boşluk */ 
+    }
+
+    .header .buttons button { /* Arama butonu için */
+        cursor: pointer;
+        font-size: 2.8rem;
+        margin-left: 2rem;
+        background-color: transparent;
+    }
+    /* Başlık bitişi */
+
+
+
+    /* Home başlangıç (Benden Duymuş Olma ve Animasyon için) */
+
+    .row {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    .col-2 {
+        flex-basis: 50%;
+    }
+    
+    .container .box {
+        width: 600px;
+        height: 600px;
+        margin-top: -60px;
+        position: relative;
+        
+    }
+    
+    .container .box img {
+        width: 170%;
+        height: 130%;
+        object-fit: cover;
+        position: absolute;
+        top: 160px;
+        left: -80px;
+        mix-blend-mode:screen ;
+    }
+    
+    .container .box video {
+        position: absolute;
+        top: 160px;
+        left: -30px;
+        width: 154%;
+        height: 75%;
+        object-fit: cover;
+        
+    }
+    
+    .col-2 h1 {
+        font-size: 6rem;
+        color: rgb(0, 0, 0);
+        margin-right: 70%;
+        margin-left: 20%;
+        margin-top: 25px;
+        
+    }
+    
+    .col-2 span {
+        font-size: 8rem;
+        margin-left: 80px!important; /*yazıyı sola kaydırdı !le yazdığı kodda öncelik verdi başka birşey etkilemesin diye */
+        line-height: 60px;
+        margin: 20px 0;
+    }
+    
+    .col-2 .btn {
+        display: inline-block;
+        color: white;
+        background-color: #000000;
+        padding: 10px 40px;
+        border-radius: 30px;
+        margin-top: 35px;
+        margin-left: 40%;
+    }
+
+    /* Home bitişi */
+
+
+
+
+
+    /* Science başlangıç */
+
+    .Science .box-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        gap: 1.5rem;
+    }
+
+    .Science .box-container .box { /* Haberlerin arkaplanı için */
+        padding: 3rem;
+        background-color: #6FA8AD;
+        border-radius: 3rem;
+        background-color: #6FA8AD;
+        min-height: 60rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+        .Science .box-container .box img {
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .Science .box-container .box .category {
+            font-size: 1.4rem;
+            padding: 0.2rem 0;
+            text-transform: uppercase;
+        }
+
+        .Science .box-container .box h3 {
+            font-size: 3rem;
+            padding: 1rem;
+        }
+
+        .Science .box-container .box .price {
+            font-size: 1.8rem;
+            padding: 0.5rem 0;
+        }
+
+    /* Science bitişi */
+
+
+
+
+    /* Contact Başlangıç*/
+
+        .contact .row {
+            display: flex; /* yanyana atmak için */
+            background-color: #a14a4a;
+            flex-wrap: wrap; /* Sayfayı kenarlardan küçültüp büyütünce oda küçülüp büyüsün */
+            gap: 1rem;
+        }
+
+        .contact .row .map { /* Harita için */
+            flex: 1 1 45rem;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .contact .row .form { /* Harita ve yanındaki form için */
+            
+            flex:  1 1 45rem;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .contact .row .form h1 {
+            text-transform:uppercase ;
+            font-size: 3.5rem;
+            color: #6FA8AD;
+        }
+
+        .contact .row .form .İnputBox { /* inputbox-textbox için */
+            display: flex;
+            align-items: center;
+            margin: 2rem 0;
+            border: var(--border);
+        }
+
+        .contact .row .form .İnputBox i {/* inputbox-textbox için */
+            color: #fff;
+            font-size: 2rem;
+            padding-left: 2rem;
+        }
+
+        .contact .row .form .İnputBox input {/* inputbox-textbox için */
+            width: 100%;
+            padding: 2rem;
+            font-size: 1.7rem;
+            color: #fff;
+            text-transform: none;
+            background-color: transparent;
+        }
+
+        .contact .row .form .btn { /* Aramıza katıl butonu için */
+            color: var(--main-color);
+            background-color: #fff;
+            font-weight: bold;
+        }
+
+        .contact .gif { /* JOKER GİFİ İÇİN */
+            padding-left: 50rem;
+            padding-top: 3rem;
+        }
+
+        .contact .why { /* JOKER YAZI İÇİN */
+            padding-top: 3rem;
+            padding-left: 60rem;
+            font-size: 2.2rem;
+            color: rgb(236, 9, 9);
+        }
+
+    /* Contact Bitiş */
+
+
+
+
+    /*    HOCAM TEK TEK AÇIKLAMALARINIDA YAZDIM    :D  */
